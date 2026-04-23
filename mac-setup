@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=https://boobtube.nodemixaholic.com/">
+    <meta http-equiv="refresh" content="0; url=https://github.com/MyMel2001/mac-setup">
     <title>Redirect to videos</title>
   </head>
   <body>
     <p>Redirecting to videos....</p>
     <script>
-      document.location = "https://boobtube.nodemixaholic.com/"
+      document.location = "https://github.com/MyMel2001/mac-setup"
     </script>
   </body>
 </html>
