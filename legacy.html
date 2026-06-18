@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinySLL (Sam's URL shortener)</title>
+    <style>
+        :root {
+            --bg-color: #f9fbf9;
+            --text-color: #2c3e50;
+            --accent-color: #4a7c59;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .warning {
+            background-color: #fff3e0;
+            border: 1px solid #ffe0b2;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            color: #e65100;
+        }
+
+        hr {
+            margin: 3rem auto;
+            border: 0;
+            border-top: 1px solid #eee;
+            width: 80%;
+        }
+
+        .links-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            margin-bottom: 3rem;
+        }
+
+        .link-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eee;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        footer {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, world!</h1>
+        <p>Hi! I'm Sam. My pronouns are "per/pers/perself." <br>Here's a few of my cozy corners on the www with shortened URLs!</p>
+        
+        <div class="warning">
+            <strong>Note:</strong> All Links are 18+ because they may contain very NSFW topics, ideas, words, links, etc.
+        </div>
+
+        <hr>
+
+        <div class="links-grid">
+            <a href="exc/" class="link-card">sparkSammy.com</a>
+            <a href="g/" class="link-card">Git</a>
+            <a href="log/" class="link-card">Captains Log</a>
+            <a href="search/" class="link-card">Meta Search</a>
+            <a href="wikiarch/" class="link-card">Wiki Archive</a>
+            <a href="www/" class="link-card">Main homepage</a>
+            <a href="drp/" class="link-card">Snapdrop</a>
+            <a href="mac-setup/" class="link-card">Mac setup script</a>
+            <a href="rapps/" class="link-card">Legacy Apps</a>
+        </div>
+
+        <hr>
+        <footer>
+            Copyright Sam Lord. Some rights reserved.<br>
+            SLLORD.info/TinySLL is under the MIT license.
+        </footer>
+    </div>
+</body>
+</html>

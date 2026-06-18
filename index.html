@@ -3,120 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TinySLL (Sam's URL shortener)</title>
+    <title>SLLORD.info</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
         :root {
-            --bg-color: #f9fbf9;
-            --text-color: #2c3e50;
-            --accent-color: #4a7c59;
-            --card-bg: #ffffff;
-            --border-radius: 12px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --header-bg: #5c2e30;
+            --grad-start: #8da7ff;
+            --grad-end: #ff8dcc;
+            --llm-bg: #b4b4b4;
+            --code-bg: #1a1a1a;
+            --sky-bg: #2c7576;
+            --support-bg: #9e3b30;
+            --news-bg: #0058cc;
+            --sound-bg: #ecd68b;
+            --footer-bg: #5c2e30;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 2rem 1rem;
-            display: flex;
-            justify-content: center;
+            font-family: 'Space Mono', 'Courier New', Courier, monospace;
+            background-color: #333;
+            text-transform: uppercase;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 600px;
-            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid black;
+        }
+
+        .cta-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--header-bg);
             text-align: center;
         }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
-
-        p {
-            line-height: 1.6;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .warning {
-            background-color: #fff3e0;
-            border: 1px solid #ffe0b2;
-            padding: 1rem;
-            border-radius: var(--border-radius);
-            font-size: 0.9rem;
-            color: #e65100;
-        }
-
-        hr {
-            margin: 3rem auto;
-            border: 0;
-            border-top: 1px solid #eee;
-            width: 80%;
-        }
-
-        .links-grid {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            margin-bottom: 3rem;
-        }
-
-        .link-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            color: var(--text-color);
+        .logo {
+            background-color: #3a6bbd;
+            color: white;
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: clamp(1.5rem, 8vw, 2.5rem);
             font-weight: bold;
-            box-shadow: var(--shadow);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid #eee;
+        }
+        .tagline {
+            color: #f7ff3d;
+            margin-top: 10px;
+            letter-spacing: 3px;
         }
 
-        .link-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border-color: var(--accent-color);
+        /* Game On Section */
+        .game-on {
+            background: linear-gradient(to bottom, var(--grad-start), var(--grad-end));
+        }
+        .game-on h1 {
+            font-size: clamp(3rem, 15vw, 7rem);
+            margin: 0;
+            color: #3d59e8;
+            text-shadow: 4px 4px 0px rgba(255,0,0,0.7), -4px -4px 0px rgba(0,255,255,0.8);
+        }
+        .game-on p {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            color: #7a2fff;
+            margin-top: 20px;
+            font-weight: bold;
         }
 
-        footer {
-            font-size: 0.85rem;
-            color: #7f8c8d;
-            line-height: 1.6;
+        /* LLM Section */
+        .llm {
+            background-color: var(--llm-bg);
+        }
+        .llm h2 {
+            font-size: clamp(1.2rem, 5vw, 2rem);
+            line-height: 1.4;
+        }
+
+        /* Code Section */
+        .code {
+            background-color: var(--code-bg);
+            color: #39ff14;
+        }
+        .code h2 {
+            margin: 0;
+            font-size: clamp(1.5rem, 6vw, 2.5rem);
+        }
+        .code .git_cmd {
+            color: #4de8fe;
+        }
+
+        /* Sky Section */
+        .sky {
+            background-color: var(--sky-bg);
+        }
+        .sky h1 {
+            color: #ffd700;
+            font-size: clamp(1.5rem, 6vw, 2.2rem);
+        }
+        .sky p {
+            color: #bbf6ff;
+            font-size: clamp(0.9rem, 4vw, 1.2rem);
+            margin-top: 5px;
+        }
+
+        /* Support Section */
+        .support {
+            background-color: var(--support-bg);
+        }
+        .support h2 {
+            color: #ffd700;
+            font-size: clamp(1.2rem, 6vw, 2rem);
+        }
+
+        /* News Section */
+        .news {
+            background-color: var(--news-bg);
+        }
+        .news h3 { margin: 0; color: #ffdf24; font-size: 1.5rem; }
+        .news p { font-size: clamp(0.9rem, 4vw, 1.2rem); color: #a9faff; margin-top: 5px; }
+
+        /* Great Sound Section */
+        .great_sound {
+            background-color: var(--sound-bg);
+        }
+        .great_sound h2 {
+            color: #0c6b3e;
+            font-size: clamp(1rem, 5vw, 2rem);
+        }
+        .great_sound p {
+            color: #bc3d45;
+            margin-top: 20px;
+            font-size: clamp(1rem, 4vw, 1.5rem);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--footer-bg);
+            border-bottom: none;
+        }
+        .footer p {
+            color: #a5e5f5;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        /* Global helper for link behavior */
+        a {
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        a:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Hello, world!</h1>
-        <p>Hi! I'm Sam. My pronouns are "per/pers/perself." <br>Here's a few of my cozy corners on the www with shortened URLs!</p>
-        
-        <div class="warning">
-            <strong>Note:</strong> All Links are 18+ because they may contain very NSFW topics, ideas, words, links, etc.
-        </div>
+        <header class="header">
+            <div class="logo">Sammy L</div>
+            <div class="tagline">CODING. GAMING. MORE.</div>
+        </header>
 
-        <hr>
+        <section class="game-on">
+            <a href="https://live.nodemixaholic.com" class="cta-link">
+                <h1>GAME ON!</h1>
+                <p>SUPER-EPIC STREAMS! CLICK HERE!</p>
+            </a>
+        </section>
 
-        <div class="links-grid">
-            <a href="exc/" class="link-card">sparkSammy.com</a>
-            <a href="g/" class="link-card">Git</a>
-            <a href="log/" class="link-card">Captains Log</a>
-            <a href="search/" class="link-card">Meta Search</a>
-            <a href="wikiarch/" class="link-card">Wiki Archive</a>
-            <a href="www/" class="link-card">Main homepage</a>
-            <a href="drp/" class="link-card">Snapdrop</a>
-            <a href="mac-setup/" class="link-card">Mac setup script</a>
-            <a href="rapps/" class="link-card">Legacy Apps</a>
-        </div>
+        <section class="llm">
+            <a href="https://ollama.com/sparksammy" class="cta-link">
+                <h2>AWESOME LLMS.<br>POWERED BY OLLAMA.<br>CLICK TO SEE THEM.</h2>
+            </a>
+        </section>
 
-        <hr>
-        <footer>
-            Copyright Sam Lord. Some rights reserved.<br>
-            SLLORD.info/TinySLL is under the MIT license.
+        <section class="code">
+            <a href="https://git.nodemixaholic.com" class="cta-link">
+                <h2>$&gt;COOL CODE</h2>
+                <h2 class="git_cmd">&gt;GOTO GIT --NOW</h2>
+            </a>
+        </section>
+
+        <section class="sky">
+            <a href="https://bsky.app/profile/nodemixaholic.com" class="cta-link">
+                <h1>BLUER SKIES AWAIT!</h1>
+                <p>CLICK TO VISIT MY BSKY PROFILE</p>
+            </a>
+        </section>
+
+        <section class="support">
+            <a href="https://coindrop.to/sam" class="cta-link">
+                <h2>PLEASE SUPPORT MY EFFORTS<br>WITH SOME MONEY<br>IF YOU CAN.<br>CLICK HERE.</h2>
+            </a>
+        </section>
+
+        <section class="news">
+            <a href="https://sparksammy.com" class="cta-link">
+                <h3>HELLO</h3>
+                <p>FROM SPARKSAMMY.</p>
+                <p>CLICKING HERE FOR FAKE NEWS? NO WAY!</p>
+                <small>(ONION+INFOWARDS DEWARE!)</small>
+            </a>
+        </section>
+
+        <section class="great_sound">
+            <a href="https://sparkys-cddc.bandcamp.com/" class="cta-link">
+                <h2>CLICK HERE FOR A GREAT SOUND.</h2>
+                <p>OF THE PRESENT!</p>
+            </a>
+        </section>
+
+        <section class="code">
+            <a href="https://www.nodemixaholic.com/7coder-home/" class="cta-link">
+                <h2>$&gt;MAKE(CODE)</h2>
+                <h2 class="git_cmd">&gt;GET 7CODER --NOW</h2>
+            </a>
+        </section>
+
+        <footer class="footer">
+            <p>COPYRIGHT SAMMY LORD.<br>E-MAIL CONTACT: HELLO@SLLORD.INFO</p>
+            <a href="legacy.html" class="cta-link"><p>Go to the older page (v2) for more stuff...</p></a>
         </footer>
     </div>
 </body>
